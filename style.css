@@ -1052,9 +1052,22 @@ footer small {
 }
 
 
-/* ==================== TOOL ICONS ==================== */
+/* =========================================================
+   POWER BI PROJECTS
+   ========================================================= */
 
-.tool-icon {
+
+/* ==================== POWER BI SECTION ==================== */
+
+.powerbi-section {
+    background: #ffffff;
+    border-top: 1px solid #edf1f5;
+}
+
+
+/* ==================== POWER BI HEADER ICON ==================== */
+
+.powerbi-section .tool-icon {
     width: 58px;
     height: 58px;
 
@@ -1064,35 +1077,183 @@ footer small {
     align-items: center;
     justify-content: center;
 
-    border-radius: 16px;
+    background: #fff9df;
 
-    background: #f4fbf7;
+    border-radius: 16px;
 
     box-shadow: 0 8px 22px rgba(18, 59, 104, 0.08);
 }
 
-.tool-icon svg {
-    width: 38px;
-    height: 38px;
+.powerbi-section .tool-icon svg {
+    width: 42px;
+    height: 42px;
 }
 
-.powerbi-icon svg rect {
+.powerbi-section .powerbi-icon svg rect {
     fill: #f2c811;
 }
 
 
-/* ==================== PROJECT HEADING ==================== */
+/* =========================================================
+   PROJECT GRID
+   ========================================================= */
 
-.project-heading {
-    display: flex;
-    align-items: flex-start;
-    gap: 14px;
+.powerbi-section .projects-grid {
+    max-width: 1500px;
+    margin: 0 auto;
 
-    margin-bottom: 10px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 24px;
+
+    align-items: stretch;
 }
 
-.card-tool-icon {
-    flex: 0 0 auto;
+
+/* =========================================================
+   PROJECT CARD
+   ========================================================= */
+
+.powerbi-section .project-card {
+    position: relative;
+
+    min-width: 0;
+    min-height: 390px;
+    height: auto;
+
+    padding: 28px;
+
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+
+    background: #f8fafc;
+
+    border: 1px solid #e2e8f0;
+    border-radius: 18px;
+
+    box-shadow:
+        0 8px 25px rgba(18, 59, 104, 0.06);
+
+    overflow: hidden;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+
+/* ==================== TOP ACCENT ==================== */
+
+.powerbi-section .project-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 3px;
+
+    background: #f2c811;
+
+    transform: scaleX(0);
+
+    transform-origin: left;
+
+    transition: transform 0.3s ease;
+}
+
+
+/* ==================== CARD HOVER ==================== */
+
+.powerbi-section .project-card:hover {
+    transform: translateY(-6px);
+
+    border-color: #cbd5e1;
+
+    box-shadow:
+        0 18px 40px rgba(18, 59, 104, 0.12);
+}
+
+.powerbi-section .project-card:hover::before {
+    transform: scaleX(1);
+}
+
+
+/* =========================================================
+   CARD TOP
+   ========================================================= */
+
+.powerbi-section .card-top {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
+
+    margin-bottom: 25px;
+}
+
+
+/* ==================== NUMBER ==================== */
+
+.powerbi-section .project-number {
+    color: #718096;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    letter-spacing: 1px;
+}
+
+
+/* ==================== SESSION TYPE ==================== */
+
+.powerbi-section .project-type {
+    max-width: 55%;
+
+    padding: 7px 12px;
+
+    background: #edf2f7;
+
+    color: #52657a;
+
+    border-radius: 20px;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   PROJECT HEADING
+   ========================================================= */
+
+.powerbi-section .project-heading {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 14px;
+
+    margin-bottom: 12px;
+
+    min-width: 0;
+}
+
+
+/* ==================== POWER BI SMALL ICON ==================== */
+
+.powerbi-section .card-tool-icon {
+    flex: 0 0 42px;
 
     width: 42px;
     height: 42px;
@@ -1103,174 +1264,231 @@ footer small {
 
     margin-top: 2px;
 
+    background: #fff9df;
+
     border-radius: 11px;
 
-    background: #fff9df;
+    transition: transform 0.3s ease;
 }
 
-.card-tool-icon svg {
-    width: 27px;
-    height: 27px;
+.powerbi-section .card-tool-icon svg {
+    width: 28px;
+    height: 28px;
 }
 
-.powerbi-small svg rect {
+.powerbi-section .powerbi-small svg rect {
     fill: #f2c811;
 }
 
 
-/* Keep title aligned properly */
+/* ==================== ICON HOVER ==================== */
 
-.project-heading h3 {
-    margin: 0;
-}
-
-
-/* ==================== POWER BI SECTION ==================== */
-
-.powerbi-section {
-    border-top: 1px solid #edf1f5;
-}
-
-
-/* ==================== HOVER EFFECT ==================== */
-
-.project-card:hover .card-tool-icon {
+.powerbi-section .project-card:hover .card-tool-icon {
     transform: translateY(-2px);
-    transition: transform 0.3s ease;
 }
 
 
-/* ==================== RESPONSIVE ==================== */
+/* =========================================================
+   TOOL NAME
+   ========================================================= */
 
-@media (max-width: 700px) {
+.powerbi-section .project-tool {
+    margin-bottom: 7px;
 
-    .tool-icon {
-        width: 52px;
-        height: 52px;
+    color: #ff6b5f;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+
+/* =========================================================
+   PROJECT TITLE
+   ========================================================= */
+
+.powerbi-section .project-heading h3 {
+    margin: 0;
+
+    color: #123b68;
+
+    font-size: 23px;
+    line-height: 1.3;
+    font-weight: 800;
+
+    overflow-wrap: anywhere;
+}
+
+
+/* =========================================================
+   DOMAIN
+   ========================================================= */
+
+.powerbi-section .domain {
+    display: block;
+
+    margin: 0 0 17px;
+
+    color: #718096;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    line-height: 1.5;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.8px;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+   ========================================================= */
+
+.powerbi-section .project-card p {
+    margin: 0;
+
+    color: #64748b;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    overflow-wrap: anywhere;
+}
+
+
+/* =========================================================
+   FOOTER - FIXED
+   ========================================================= */
+
+.powerbi-section .project-footer {
+    position: static;
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    margin-top: auto;
+
+    padding-top: 25px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
+}
+
+
+/* =========================================================
+   STATUS
+   ========================================================= */
+
+.powerbi-section .status {
+    flex-shrink: 0;
+
+    padding: 7px 12px;
+
+    border-radius: 20px;
+
+    font-size: 11px;
+    font-weight: 800;
+
+    white-space: nowrap;
+}
+
+
+/* Full Project */
+
+.powerbi-section .status.full {
+    background: #e8f7ef;
+
+    color: #28a76a;
+}
+
+
+/* Partial Project */
+
+.powerbi-section .status.partial {
+    background: #fff4df;
+
+    color: #d99119;
+}
+
+
+/* =========================================================
+   TECHNOLOGY
+   ========================================================= */
+
+.powerbi-section .tech {
+    min-width: 0;
+
+    color: #718096;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    text-align: right;
+
+    overflow-wrap: anywhere;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+    .powerbi-section .projects-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
-    .project-heading {
-        gap: 11px;
-    }
-
-    .card-tool-icon {
-        width: 38px;
-        height: 38px;
+    .powerbi-section .project-card {
+        min-height: 380px;
     }
 
 }
 
 
 /* =========================================================
-   MOBILE RESPONSIVE DESIGN
+   MOBILE
    ========================================================= */
 
-/* ---------- General ---------- */
-
-html {
-    overflow-x: hidden;
-}
-
-body {
-    margin: 0;
-    overflow-x: hidden;
-}
-
-img,
-svg {
-    max-width: 100%;
-}
-
-
-/* ---------- Navbar ---------- */
-
 @media (max-width: 768px) {
 
-    nav {
-        height: auto !important;
-        min-height: 72px;
-        padding: 14px 20px !important;
-
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-
-        flex-wrap: wrap;
-        gap: 12px;
-    }
-
-    nav img {
-        width: 125px;
-        height: auto;
-    }
-
-    nav ul {
-        width: 100%;
-
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        gap: 18px;
-
-        margin: 5px 0 0;
-        padding: 0;
-
-        flex-wrap: wrap;
-    }
-
-    nav ul li a {
-        font-size: 13px;
-    }
-}
-
-
-/* ---------- Main Sections ---------- */
-
-@media (max-width: 768px) {
-
-    .projects-section {
-        width: 100%;
-        box-sizing: border-box;
-
+    .powerbi-section {
         padding: 55px 18px 65px !important;
     }
 
-    .section-header {
+
+    /* Header */
+
+    .powerbi-section .section-header {
         width: 100%;
         max-width: 100%;
 
-        margin: 0 auto 35px;
-        text-align: center;
+        margin-bottom: 35px;
     }
 
-    .section-header h2 {
+    .powerbi-section .section-header h2 {
         font-size: 32px !important;
         line-height: 1.2;
-
-        margin-bottom: 12px;
     }
 
-    .section-header p {
-        width: 100%;
-        max-width: 100%;
-
+    .powerbi-section .section-header p {
         font-size: 14px !important;
         line-height: 1.7;
     }
 
-    .section-tag {
-        font-size: 12px;
-        letter-spacing: 1.7px;
-    }
-}
 
+    /* Main Power BI Icon */
 
-/* ---------- Tool Icon ---------- */
-
-@media (max-width: 768px) {
-
-    .tool-icon {
+    .powerbi-section .tool-icon {
         width: 52px;
         height: 52px;
 
@@ -1279,71 +1497,67 @@ svg {
         border-radius: 14px;
     }
 
-    .tool-icon svg {
+    .powerbi-section .tool-icon svg {
         width: 36px;
         height: 36px;
     }
-}
 
 
-/* ---------- Project Grid ---------- */
+    /* Grid */
 
-@media (max-width: 768px) {
-
-    .projects-grid {
+    .powerbi-section .projects-grid {
         width: 100%;
         max-width: 100%;
 
-        display: grid;
         grid-template-columns: 1fr;
 
         gap: 18px;
     }
-}
 
 
-/* ---------- Project Cards ---------- */
+    /* Card */
 
-@media (max-width: 768px) {
-
-    .project-card {
+    .powerbi-section .project-card {
         width: 100%;
         min-width: 0;
+
         min-height: 0;
 
-        box-sizing: border-box;
-
-        padding: 22px 20px 80px;
+        padding: 22px 20px;
 
         border-radius: 16px;
     }
 
-    .card-top {
+
+    /* Card Top */
+
+    .powerbi-section .card-top {
         margin-bottom: 20px;
     }
 
-    .project-number {
+    .powerbi-section .project-number {
         font-size: 12px;
     }
 
-    .project-type {
+    .powerbi-section .project-type {
         padding: 6px 10px;
+
         font-size: 10px;
     }
 
 
-    /* Project heading */
+    /* Heading */
 
-    .project-heading {
-        display: flex;
-        align-items: flex-start;
-
+    .powerbi-section .project-heading {
         gap: 11px;
 
-        width: 100%;
+        margin-bottom: 12px;
     }
 
-    .card-tool-icon {
+
+    /* Small Icon */
+
+    .powerbi-section .card-tool-icon {
         flex: 0 0 38px;
 
         width: 38px;
@@ -1352,105 +1566,743 @@ svg {
         border-radius: 10px;
     }
 
-    .card-tool-icon svg {
+    .powerbi-section .card-tool-icon svg {
         width: 25px;
         height: 25px;
     }
 
 
-    /* Tool name */
+    /* Tool */
 
-    .project-tool {
-        margin-bottom: 6px;
+    .powerbi-section .project-tool {
+        margin-bottom: 5px;
 
         font-size: 10px;
+
         letter-spacing: 1.7px;
     }
 
 
-    /* Project title */
+    /* Title */
 
-    .project-card h3 {
-        margin: 0;
-
+    .powerbi-section .project-heading h3 {
         font-size: 20px !important;
-        line-height: 1.3;
 
-        overflow-wrap: anywhere;
+        line-height: 1.3;
     }
 
 
     /* Domain */
 
-    .domain {
-        margin-top: 13px;
+    .powerbi-section .domain {
+        margin-top: 10px;
         margin-bottom: 12px;
 
         font-size: 10px;
+
         line-height: 1.5;
     }
 
 
     /* Description */
 
-    .project-card p {
+    .powerbi-section .project-card p {
         font-size: 13px !important;
+
         line-height: 1.65;
     }
 
 
     /* Footer */
 
-    .project-footer {
-        left: 20px;
-        right: 20px;
-        bottom: 20px;
+    .powerbi-section .project-footer {
+        position: static;
+
+        margin-top: 22px;
+
+        padding-top: 0;
 
         gap: 10px;
     }
 
-    .status {
+
+    .powerbi-section .status {
         padding: 6px 10px;
 
         font-size: 10px;
     }
 
-    .tech {
+    .powerbi-section .tech {
         font-size: 10px;
-
-        text-align: right;
     }
+
 }
 
 
-/* ---------- Very Small Phones ---------- */
+/* =========================================================
+   VERY SMALL PHONES
+   ========================================================= */
 
 @media (max-width: 400px) {
 
-    .projects-section {
+    .powerbi-section {
         padding-left: 14px !important;
         padding-right: 14px !important;
     }
 
-    .section-header h2 {
+
+    .powerbi-section .section-header h2 {
         font-size: 28px !important;
     }
 
-    .section-header p {
+
+    .powerbi-section .section-header p {
         font-size: 13px !important;
     }
 
-    .project-card {
-        padding-left: 17px;
-        padding-right: 17px;
+
+    .powerbi-section .project-card {
+        padding: 20px 17px;
     }
 
-    .project-card h3 {
+
+    .powerbi-section .project-heading h3 {
         font-size: 18px !important;
     }
 
-    .project-footer {
-        left: 17px;
-        right: 17px;
+
+    .powerbi-section .project-footer {
+        gap: 8px;
     }
+
+}
+
+
+/* =========================================================
+   SQL PROJECTS SECTION
+   ========================================================= */
+
+/* ---------- SQL Section ---------- */
+
+.sql-section {
+    background: #ffffff;
+    border-top: 1px solid #edf1f5;
+}
+
+
+/* ---------- SQL Header Icon ---------- */
+
+.sql-icon {
+    width: 58px;
+    height: 58px;
+
+    margin: 0 auto 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #eff6ff;
+
+    border-radius: 16px;
+
+    box-shadow: 0 8px 22px rgba(18, 59, 104, 0.08);
+}
+
+.sql-icon svg {
+    width: 42px;
+    height: 42px;
+}
+
+
+/* =========================================================
+   PROJECT GRID
+   ========================================================= */
+
+.sql-section .projects-grid {
+    max-width: 1500px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 24px;
+
+    align-items: stretch;
+}
+
+
+/* =========================================================
+   PROJECT CARD
+   ========================================================= */
+
+.sql-section .project-card {
+    position: relative;
+
+    min-width: 0;
+    min-height: 390px;
+    height: auto;
+
+    padding: 28px;
+
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+
+    background: #f8fafc;
+
+    border: 1px solid #e2e8f0;
+    border-radius: 18px;
+
+    box-shadow:
+        0 8px 25px rgba(18, 59, 104, 0.06);
+
+    overflow: hidden;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+
+/* ---------- Card Top Coral Line ---------- */
+
+.sql-section .project-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 3px;
+
+    background: #ff6b5f;
+
+    transform: scaleX(0);
+
+    transform-origin: left;
+
+    transition: transform 0.3s ease;
+}
+
+
+/* ---------- Card Hover ---------- */
+
+.sql-section .project-card:hover {
+    transform: translateY(-6px);
+
+    border-color: #cbd5e1;
+
+    box-shadow:
+        0 18px 40px rgba(18, 59, 104, 0.12);
+}
+
+.sql-section .project-card:hover::before {
+    transform: scaleX(1);
+}
+
+
+/* =========================================================
+   CARD TOP
+   ========================================================= */
+
+.sql-section .card-top {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
+
+    margin-bottom: 25px;
+}
+
+
+/* ---------- Project Number ---------- */
+
+.sql-section .project-number {
+    color: #718096;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    letter-spacing: 1px;
+}
+
+
+/* ---------- Session Type ---------- */
+
+.sql-section .project-type {
+    max-width: 55%;
+
+    padding: 7px 12px;
+
+    background: #edf2f7;
+
+    color: #52657a;
+
+    border-radius: 20px;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   PROJECT HEADING
+   ========================================================= */
+
+.sql-section .project-heading {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 14px;
+
+    margin-bottom: 12px;
+
+    min-width: 0;
+}
+
+
+/* ---------- SQL Small Icon ---------- */
+
+.sql-small {
+    flex: 0 0 42px;
+
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 2px;
+
+    background: #eff6ff;
+
+    border-radius: 11px;
+
+    transition: transform 0.3s ease;
+}
+
+.sql-small svg {
+    width: 28px;
+    height: 28px;
+}
+
+
+/* ---------- Icon Hover ---------- */
+
+.sql-section .project-card:hover .sql-small {
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   TOOL NAME
+   ========================================================= */
+
+.sql-section .project-tool {
+    margin-bottom: 7px;
+
+    color: #ff6b5f;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+
+/* =========================================================
+   PROJECT TITLE
+   ========================================================= */
+
+.sql-section .project-heading h3 {
+    margin: 0;
+
+    color: #123b68;
+
+    font-size: 23px;
+    line-height: 1.3;
+    font-weight: 800;
+
+    overflow-wrap: anywhere;
+}
+
+
+/* =========================================================
+   DOMAIN
+   ========================================================= */
+
+.sql-section .domain {
+    display: block;
+
+    margin: 0 0 17px;
+
+    color: #718096;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    line-height: 1.5;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.8px;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+   ========================================================= */
+
+.sql-section .project-card p {
+    margin: 0;
+
+    color: #64748b;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    overflow-wrap: anywhere;
+}
+
+
+/* =========================================================
+   FOOTER - IMPORTANT FIX
+   ========================================================= */
+
+.sql-section .project-footer {
+    position: static;
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    margin-top: auto;
+
+    padding-top: 25px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
+}
+
+
+/* =========================================================
+   STATUS
+   ========================================================= */
+
+.sql-section .status {
+    flex-shrink: 0;
+
+    padding: 7px 12px;
+
+    border-radius: 20px;
+
+    font-size: 11px;
+    font-weight: 800;
+
+    white-space: nowrap;
+}
+
+
+/* Full Project */
+
+.sql-section .status.full {
+    background: #e8f7ef;
+
+    color: #28a76a;
+}
+
+
+/* Partial / Practice */
+
+.sql-section .status.partial {
+    background: #fff4df;
+
+    color: #d99119;
+}
+
+
+/* =========================================================
+   TECHNOLOGY
+   ========================================================= */
+
+.sql-section .tech {
+    min-width: 0;
+
+    color: #718096;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    text-align: right;
+
+    overflow-wrap: anywhere;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+    .sql-section .projects-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .sql-section .project-card {
+        min-height: 380px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .sql-section {
+        padding: 55px 18px 65px !important;
+    }
+
+
+    /* Header */
+
+    .sql-section .section-header {
+        width: 100%;
+        max-width: 100%;
+
+        margin-bottom: 35px;
+    }
+
+    .sql-section .section-header h2 {
+        font-size: 32px !important;
+        line-height: 1.2;
+    }
+
+    .sql-section .section-header p {
+        font-size: 14px !important;
+        line-height: 1.7;
+    }
+
+
+    /* Main SQL Icon */
+
+    .sql-icon {
+        width: 52px;
+        height: 52px;
+
+        margin-bottom: 14px;
+
+        border-radius: 14px;
+    }
+
+    .sql-icon svg {
+        width: 36px;
+        height: 36px;
+    }
+
+
+    /* Grid */
+
+    .sql-section .projects-grid {
+        width: 100%;
+        max-width: 100%;
+
+        grid-template-columns: 1fr;
+
+        gap: 18px;
+    }
+
+
+    /* Card */
+
+    .sql-section .project-card {
+        width: 100%;
+        min-width: 0;
+
+        min-height: 0;
+
+        padding: 22px 20px;
+
+        border-radius: 16px;
+    }
+
+
+    /* Card Top */
+
+    .sql-section .card-top {
+        margin-bottom: 20px;
+    }
+
+    .sql-section .project-number {
+        font-size: 12px;
+    }
+
+    .sql-section .project-type {
+        padding: 6px 10px;
+
+        font-size: 10px;
+    }
+
+
+    /* Heading */
+
+    .sql-section .project-heading {
+        gap: 11px;
+
+        margin-bottom: 12px;
+    }
+
+
+    /* Small Icon */
+
+    .sql-small {
+        flex: 0 0 38px;
+
+        width: 38px;
+        height: 38px;
+
+        border-radius: 10px;
+    }
+
+    .sql-small svg {
+        width: 25px;
+        height: 25px;
+    }
+
+
+    /* Tool */
+
+    .sql-section .project-tool {
+        margin-bottom: 5px;
+
+        font-size: 10px;
+
+        letter-spacing: 1.7px;
+    }
+
+
+    /* Title */
+
+    .sql-section .project-heading h3 {
+        font-size: 20px !important;
+
+        line-height: 1.3;
+    }
+
+
+    /* Domain */
+
+    .sql-section .domain {
+        margin-top: 10px;
+        margin-bottom: 12px;
+
+        font-size: 10px;
+
+        line-height: 1.5;
+    }
+
+
+    /* Description */
+
+    .sql-section .project-card p {
+        font-size: 13px !important;
+
+        line-height: 1.65;
+    }
+
+
+    /* Footer */
+
+    .sql-section .project-footer {
+        position: static;
+
+        margin-top: 22px;
+
+        padding-top: 0;
+
+        gap: 10px;
+    }
+
+
+    .sql-section .status {
+        padding: 6px 10px;
+
+        font-size: 10px;
+    }
+
+    .sql-section .tech {
+        font-size: 10px;
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 400px) {
+
+    .sql-section {
+        padding-left: 14px !important;
+        padding-right: 14px !important;
+    }
+
+
+    .sql-section .section-header h2 {
+        font-size: 28px !important;
+    }
+
+
+    .sql-section .section-header p {
+        font-size: 13px !important;
+    }
+
+
+    .sql-section .project-card {
+        padding: 20px 17px;
+    }
+
+
+    .sql-section .project-heading h3 {
+        font-size: 18px !important;
+    }
+
+
+    .sql-section .project-footer {
+        gap: 8px;
+    }
+
+}
+
+
+/* =========================================================
+   EXTRA LONG TITLES
+   ========================================================= */
+
+@media (min-width: 769px) {
+
+    .sql-section .project-heading h3 {
+        max-width: 100%;
+    }
+
 }
